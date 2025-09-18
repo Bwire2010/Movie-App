@@ -9,7 +9,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
         <Image
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
-          width={250}
+          width={300}
           height={300}
           className="rounded-lg h-auto"
         />
