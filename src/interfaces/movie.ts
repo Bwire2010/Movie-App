@@ -2,9 +2,11 @@ export interface Movie {
   id: number;
   title: string;
   overview: string;
-  poster_path: string;
+  poster_path: string | null;
   release_date: string;
   vote_average: number;
+  vote_count: number; // added
+  runtime: number; // added
 }
 
 export interface MovieListResponse {
@@ -16,8 +18,24 @@ export interface MovieListResponse {
 
 export interface MovieDetails extends Movie {
   genres: { id: number; name: string }[];
+  production_companies: {
+    id: number;
+    logo_path: string | null;
+    name: string;
+    origin_country: string;
+  }[];
   credits: {
-    cast: { id: number; name: string; character: string; profile_path: string }[];
-    crew: { id: number; name: string; job: string }[];
+    cast: {
+      id: number;
+      name: string;
+      character: string;
+      profile_path: string | null; // allow null
+    }[];
+    crew: {
+      id: number;
+      name: string;
+      job: string;
+      profile_path: string | null; // allow null
+    }[];
   };
 }
