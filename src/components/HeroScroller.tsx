@@ -4,11 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { motion } from "framer-motion";
+import { Movie } from "@/interfaces/movie";
 
 import { Star } from "lucide-react"; // for ratings icon
 
 interface HeroScrollerProps {
-  movies: any[];
+  movies: Movie[];
 }
 
 export default function HeroScroller({ movies }: HeroScrollerProps) {
