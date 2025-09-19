@@ -14,7 +14,7 @@ interface HeroScrollerProps {
 
 export default function HeroScroller({ movies }: HeroScrollerProps) {
   return (
-    <div className="w-full h-[70vh] relative mb-16">
+    <div className="w-full h-[70vh] relative mb-6">
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}

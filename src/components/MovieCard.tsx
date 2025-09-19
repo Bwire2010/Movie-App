@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function MovieCard({ movie }: { movie: Movie }) {
   return (
-    <div className="rounded-lg shadow-md bg-white hover:shadow-xl transition p-3">
+    <div className="rounded-lg shadow-md bg-white hover:shadow-xl transition p-1">
       <Link href={`/movie/${movie.id}`}>
         <div className="relative w-full aspect-[2/3]"> 
           {/* Keeps consistent poster aspect ratio */}

@@ -12,17 +12,21 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
 
   useEffect(() => {
     const delayDebounce = setTimeout(() => {
-      onSearch(query);
-    }, 500); // wait 500ms after typing stops
+      // 🔑 Only trigger when query changes (allow clearing to reset back to popular)
+      onSearch(query.trim());
+    }, 500);
 
     return () => clearTimeout(delayDebounce);
   }, [query, onSearch]);
 
   return (
-    <div className="flex items-center justify-center w-[40%] mx-auto my-6">
+    <div className="flex items-center justify-center w-[80%] md:w-[40%] mx-auto my-6">
       <div className="relative w-full">
         {/* 🔍 Icon inside input */}
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+        <Search
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+          size={18}
+        />
 
         <input
           type="text"
