@@ -16,7 +16,7 @@ export default function PersonCard({ name, role, profilePath }: PersonCardProps)
             : "/placeholder.jpg"
         }
         alt={name}
-        width={150}
+        width={200}
         height={200}
         className="rounded-lg object-cover mx-auto"
       />
