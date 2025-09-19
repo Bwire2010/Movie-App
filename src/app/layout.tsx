@@ -1,19 +1,30 @@
 
 import "./globals.css";
-import Providers from "@/components/Providers";
+import { AuthProvider } from "@/contexts/AuthContext";
+import Navbar from "@/components/Navbar";
+import ReactQueryProvider from "@/contexts/ReactQueryProvider";
+import type { Metadata } from "next";
 
-
-export const metadata = {
-  title: "Movies App",
-  description: "Movie explorer built with Next.js & React Query",
+export const metadata: Metadata = {
+  title: "CinemaHub",
+  description: "Welcome to CinemaHub",
+  icons: {
+    icon: "/logo.jpg", 
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <ReactQueryProvider>
+          <AuthProvider>
+            <Navbar />
+            <main>{children}</main>
+          </AuthProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
 }
+
