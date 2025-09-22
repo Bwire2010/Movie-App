@@ -14,7 +14,7 @@ interface HeroScrollerProps {
 
 export default function HeroScroller({ movies }: HeroScrollerProps) {
   return (
-    <div className="w-full h-[70vh] relative mb-6">
+    <div className="w-full h-[90vh] relative mb-6">
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -25,7 +25,7 @@ export default function HeroScroller({ movies }: HeroScrollerProps) {
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
             <div
-              className="w-full h-full bg-cover bg-center relative"
+              className="w-full h-full bg-cover bg-center relative pb-9"
               style={{
                 backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
               }}
@@ -40,17 +40,17 @@ export default function HeroScroller({ movies }: HeroScrollerProps) {
                 transition={{ duration: 0.6 }}
                 className="absolute bottom-10 left-10 max-w-2xl text-white"
               >
-                <h2 className="text-4xl font-bold mb-3">{movie.title}</h2>
+                <h2 className="text-4xl font-bold xl:text-6xl mb-3">{movie.title}</h2>
                 <div className="flex items-center gap-4 mb-4">
                   <span className="flex items-center gap-1">
-                    <Star className="w-5 h-5 text-yellow-400" />
+                    <Star className="w-5 h-5 text-yellow-400 xl:w-8 xl:h-8" />
                     {movie.vote_average.toFixed(1)}
                   </span>
                   <span className="px-2 py-1 bg-green-600 rounded text-sm font-semibold">
                     HD
                   </span>
                 </div>
-                <p className="text-sm text-gray-200 line-clamp-3">
+                <p className="text-sm text-gray-200 xl:text-xl line-clamp-3">
                   {movie.overview}
                 </p>
               </motion.div>
