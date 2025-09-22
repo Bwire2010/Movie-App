@@ -13,7 +13,7 @@ export default function Navbar() {
   const getUserName = (email: string) => email.split("@")[0];
 
   return (
-    <nav className="w-full bg-white text-gray-800 py-4 px-4 md:px-24 shadow-md z-50">
+    <nav className="w-full bg-white text-gray-800 py-4 px-4 md:px-2 shadow-md z-50">
       <div className="flex justify-between items-center relative">
         {/* Logo + App Name */}
         <div className="flex items-center">
